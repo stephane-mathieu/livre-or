@@ -1,0 +1,23 @@
+.comm {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    height: 800px;
+    width: 800px;
+    border-radius: 20px;
+}
+
+.ka {
+    background-color: rgb(104, 103, 103);
+}
+
+.countere {
+    display: flex;
+    flex-direction: row;
+}
+
+iframe {
+    width: 49rem;
+    height: 400px;
+    margin-left: 140%;
+    margin-top: -25rem;
+}

@@ -1,0 +1,9 @@
+.boudy {
+    height: 100vh;
+    background: linear-gradient(to top right, #364b55 0%, #94b3ad 100%);
+}
+
+.container {
+    background: linear-gradient(to top right, #364b55 0%, #94b3ad 100%);
+    border: thick double #fdffff;
+}
