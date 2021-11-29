@@ -6,8 +6,6 @@ include('stock.php');
 ?>
 <?php
  $DateAndTime = date('Y-m-d h:i:s', time());
-// $date = new DateTime('01-12-2015');
-// echo($date->format('D-M-Y'));   
 if (isset($_POST['submit'])){
     $idd = $value['id'];
     $commm = $_POST['commentaire'];
@@ -24,11 +22,12 @@ if (isset($_POST['submit'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="index.css" rel="stylesheet" />
+    <link href="./CSS/index.css" rel="stylesheet" />
+    <link href="./CSS/inscription.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>Document</title>
 </head>
-<body>
+<body class="boudy">
 <header>
     <nav class="navbar navbar-expand-lg navbar-light ">
       <div class=" test container-fluid">
@@ -40,19 +39,30 @@ if (isset($_POST['submit'])){
             <li class="nav-item">
               <a class="nav-link active text-white" aria-current="page" href="index.php">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link active text-white" aria-current="page" href="inscription.php">Inscription</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active text-white" aria-current="page" href="connexion.php">Connexion</a>
-            </li>
-           <li class="nav-item">
+            <?php
+                if(isset($value['login']) == false){
+                ?><li class="nav-item">
+                <a class="nav-link active text-white" aria-current="page" href="inscription.php">Inscription</a>
+        </li>
+        <?php }; ?>
+                <?php
+                if(isset($value['login']) == false){
+                ?><li class="nav-item">
+                <a class="nav-link active text-white" aria-current="page" href="connexion.php">Connexion</a>
+        </li>
+        <?php }; ?>
+            <?php
+                if(isset($value['login'])){
+                ?><li class="nav-item">
                 <a class="nav-link active text-white" aria-current="page" href="deconnexion.php">Deconnexion</a>
-              </li>
-          
-            <li class="nav-item">
+        </li>
+        <?php }; ?>
+              <?php
+                if(isset($value['login'])){
+                ?><li class="nav-item">
                 <a class="nav-link active text-white" aria-current="page" href="profil.php">Modifier son profil</a>
-              </li>
+        </li>
+        <?php }; ?>
              <li class="nav-item">
                 <a class="nav-link active text-white" aria-current="page" href="livre-or.php">livre-or</a>
              </li>
@@ -66,15 +76,15 @@ if (isset($_POST['submit'])){
     </nav>
   </header>
 <main>
-<div class="form">
-    <form action="" method="POST">
+<div class="container col-5 position-absolute top-50 start-50 translate-middle">
+    <form  class ="row g-3"action="" method="POST">
     <textarea  name="commentaire"></textarea>
     <button class="btn btn-primary"  name = "submit" type="submit">Valider</button>
     </form>
 <div>
 </main>
-<footer class=" faz py-3 my-4>
-  <div class="container">
+<footer class=" faz py-3 my-4 fixed-bottom">
+<div class="container2">
   <ul class="nav justify-content-center border-bottom pb-3 mb-3">
     <li class="nav-item">
       <a href="" class="nav-link px-2 text-black">Home</a>

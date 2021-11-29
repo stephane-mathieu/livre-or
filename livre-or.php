@@ -27,19 +27,30 @@ include('stock.php');
             <li class="nav-item">
               <a class="nav-link active text-white" aria-current="page" href="index.php">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link active text-white" aria-current="page" href="inscription.php">Inscription</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active text-white" aria-current="page" href="connexion.php">Connexion</a>
-            </li>
-           <li class="nav-item">
+            <?php
+                if(isset($value['login']) == false){
+                ?><li class="nav-item">
+                <a class="nav-link active text-white" aria-current="page" href="inscription.php">Inscription</a>
+        </li>
+        <?php }; ?>
+                <?php
+                if(isset($value['login']) == false){
+                ?><li class="nav-item">
+                <a class="nav-link active text-white" aria-current="page" href="connexion.php">Connexion</a>
+        </li>
+        <?php }; ?>
+            <?php
+                if(isset($value['login'])){
+                ?><li class="nav-item">
                 <a class="nav-link active text-white" aria-current="page" href="deconnexion.php">Deconnexion</a>
-              </li>
-          
-            <li class="nav-item">
+        </li>
+        <?php }; ?>
+              <?php
+                if(isset($value['login'])){
+                ?><li class="nav-item">
                 <a class="nav-link active text-white" aria-current="page" href="profil.php">Modifier son profil</a>
-              </li>
+        </li>
+        <?php }; ?>
              <li class="nav-item">
                 <a class="nav-link active text-white" aria-current="page" href="livre-or.php">livre-or</a>
              </li>
@@ -68,18 +79,20 @@ include('stock.php');
             echo  "posté le " .$valued['date']." par ".$valued['login']." : ".$valued['commentaire']."<br>";
             }
             ?>
+      </div>
       <div>
-                  <?php
-                  if(isset($value['login'])){
-            echo "<a href='commentaire.php'>Ajouter un commentaire</a>";
-                  }
-            ?>
-      
+      <?php
+          if(isset($value['login'])){
+            echo "<form action='commentaire.php'><button class='button2' type='submit'>Ajouter un commentaire</button>
+      </form>";
+          }
+      ?>
+      </div>
       <div class="video">
             <iframe src="https://www.youtube.com/embed/h7gm9aqXabw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      
       </div>
 </div>
+
 
 </main>
 <footer class="py-3 my-4 fixed-bottom">

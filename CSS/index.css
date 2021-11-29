@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
 .hamilton,
 .Verstappen,
 .Bottas {
@@ -44,6 +45,7 @@ li:hover {
 
 .hamilton:hover {
     transform: scale(1.1);
+    box-shadow: 5px 5px 10px rgb(0, 247, 255);
 }
 
 .Verstappen {
@@ -52,6 +54,7 @@ li:hover {
 
 .Verstappen:hover {
     transform: scale(1.1);
+    box-shadow: 5px 5px 10px rgb(0, 4, 255);
 }
 
 .Bottas {
@@ -60,9 +63,15 @@ li:hover {
 
 .Bottas:hover {
     transform: scale(1.1);
+    box-shadow: 5px 5px 10px rgb(0, 247, 255);
 }
 
 .logo {
     width: 100px;
     height: 30px;
+}
+
+.prem2 {
+    font-family: 'Nanum Myeongjo', serif;
+    text-shadow: rgb(255, 8, 0) 1px 0 10px;
 }
